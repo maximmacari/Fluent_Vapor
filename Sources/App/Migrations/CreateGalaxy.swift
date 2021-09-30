@@ -1,14 +1,14 @@
 import Fluent
 
-struct CreateList : Migration {
+struct CreateGalaxy: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
-        return database.schema(List.schema)
+        return database.schema(Galaxy.schema)
             .id()
-            .field("title", .string, .required)
+            .field("name", .string)
             .create()
     }
 
     func revert(on database: Database) -> EventLoopFuture<Void> {
-        return database.schema(List.schema).delete()
+        return database.schema(Galaxy.schema).delete()
     }
 }

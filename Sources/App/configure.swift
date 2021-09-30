@@ -17,6 +17,11 @@ public func configure(_ app: Application) throws {
 
     app.migrations.add(CreateList())
     app.migrations.add(CreateTodo())
+    app.migrations.add(CreateGalaxy())
+    app.migrations.add(CreatePlanet())
+    app.migrations.add(CreateGovernor())
+    app.migrations.add(CreateStar())
+    
     
 
     app.http.server.configuration.hostname = "192.168.1.182"

@@ -10,7 +10,7 @@ final class Todo: Model, Content {
     @Field(key: "title")
     var title: String
 
-    @Parent(key: "id")
+    @Parent(key: "list_id")
     var list: List
 
     init() { }
