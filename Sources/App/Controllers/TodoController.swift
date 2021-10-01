@@ -27,3 +27,36 @@ struct TodoController: RouteCollection {
             .transform(to: .ok)
     }
 }
+
+
+//QUERY
+
+//.all() .first()
+
+//filter(\.$name == "name")
+// == | != | >= | > | < | <=
+// ~~ | !~ | =~ | !=~ | ~= | !~=
+
+//Field filter: comparing two columns
+
+//group
+
+//Aggregates
+/*
+count: Number of results
+sum: Sum of results value
+average: Average of result values
+min: Minimum result value
+max: Maximum result value
+*/
+
+//Chunk: separate the returning result, controlling memory usage
+//filed: selected a subset of model's fields, fields not selected will be in an unitilized state.
+//Unique: only distinct results (no duplicates).
+//range: allow to chose a subset of the results
+//join: allows to include one or more model's fields in the result.
+//Alias: Allow you to join the same model to a query multiple times.
+//update: supports updating more than one model at a time using update method.
+//delete: supports deleting more than one model at a time using update method.
+//paginate: Using the parameters (page, per) will return a desired set of results.
+//sort: sorting results by field values

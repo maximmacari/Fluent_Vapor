@@ -3,7 +3,7 @@ import Fluent
 
 final class Planet: Model, Content {
     //Name of the table or collection
-    static let schema = "planets"
+    public static let schema = "planets"
 
     //Unique identifier for this planet
     @ID(key: .id)

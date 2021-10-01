@@ -5,6 +5,9 @@ struct PlanetController: RouteCollection {
     func boot(routes: RoutesBuilder) throws {
         let planets = routes.grouped("planets")
         planets.get(use: index)
+        planets.get("count") { req in
+            try count(req: req)
+        }
         planets.post(use: create)
         planets.group(":planetID") { planet in
             planet.delete(use: delete)
@@ -25,5 +28,9 @@ struct PlanetController: RouteCollection {
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .transform(to: .ok)
+    }
+
+    func count(req: Request) throws -> EventLoopFuture<Int> {
+        Planet.query(on: req.db).count()
     }
 }
