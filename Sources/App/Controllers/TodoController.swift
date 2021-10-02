@@ -59,4 +59,4 @@ max: Maximum result value
 //update: supports updating more than one model at a time using update method.
 //delete: supports deleting more than one model at a time using update method.
 //paginate: Using the parameters (page, per) will return a desired set of results.
-//sort: sorting results by field values
+//sort: sorting results by field values 
